@@ -56,7 +56,7 @@ app.post("/edit/:id", (req, res) => {
   const sql = "UPDATE students SET name=?, dept=?, semester=?, last_gpa=? WHERE id=?";
   db.query(sql, [name, dept, semester, last_gpa, id], (err) => {
     if (err) throw err;
-    res.redirect("/"); // আপডেট শেষে আবার হোমপেজে রিডিরেক্ট
+    res.redirect("/");
   });
 });
 
@@ -71,3 +71,4 @@ app.get('/delete/:id', (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+
